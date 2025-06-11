@@ -39,3 +39,26 @@
     left: 0;
   }
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-section, #printable-section * {
+    visibility: visible;
+  }
+
+  #printable-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  button {
+    display: none; /* hide print button */
+  }
+}
+
