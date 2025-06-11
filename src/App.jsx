@@ -1,12 +1,11 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-// Import components properly
+// Components
 import Navbar from "./Components/Navbar/Navbar";
-// import ExpensesTable from "./Components/ExpensesTable/ExpensesTable"; // <-- Correct import
 import ExpensesChart from "./Components/Expenseschart/Expenseschart";
 import TransactionsList from "./Components/TransactionsList/TransactionsList";
-
+import BudgetAlert from "./Components/BudgetAlert/BudgetAlert";
 
 // Pages
 import SignUp from "./Pages/SignUp/SignUp";
@@ -16,14 +15,15 @@ import Logout from "./Pages/Logout/Logout";
 import AddExpense from "./Pages/AddExpense";
 import Dashboard from "./Pages/DashBoard/DashBoard";
 import PaginatedExpenses from './Pages/PaginatedExpenses/PaginatedExpenses';
-import BudgetAlert from "./Components/BudgetAlert/BudgetAlert";
 
 const App = () => {
+  const location = useLocation();
+  const isDashboardPage = location.pathname === "/dashboard";
+
   return (
     <div>
       <Navbar />
-         <PaginatedExpenses />
-      {/* <ExpensesTable /> Use the right component name */}
+
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/signup" element={<SignUp />} />
@@ -34,14 +34,14 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/expenseschart" element={<ExpensesChart />} />
         <Route path="/transactionList" element={<TransactionsList />} />
-
-        <Route path="/budgetAlert" element={<BudgetAlert/>}/>
-        {/* <Route path="/expensestable" element={<ExpensesTable />} /> */}
-
-
+        <Route path="/budgetAlert" element={<BudgetAlert />} />
       </Routes>
+
+      {/*  Show only on /dashboard */}
+      {isDashboardPage && <PaginatedExpenses />}
     </div>
   );
 };
 
 export default App;
+
