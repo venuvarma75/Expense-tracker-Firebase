@@ -1,0 +1,103 @@
+/* .brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00ffd0 !important;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-item-link {
+  color: #f8f9fa;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-item-link:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+  text-decoration: none;
+} */
+
+
+
+
+
+/* Base navbar style */
+.custom-navbar {
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.brand-name {
+  color: #fca311;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-item-link {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-item-link:hover {
+  background-color: #fca311;
+  color: #0d1b2a;
+}
+
+.active-link {
+  background-color: #fca311;
+  color: #0d1b2a;
+  font-weight: bold;
+}
+
+/* Theme-specific styles */
+.dark-navbar {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  border-bottom: 2px solid #415a77;
+}
+
+.light-navbar {
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  border-bottom: 2px solid #ccc;
+}
+
+/* Body themes */
+body.dark-theme {
+  background-color: #121212;
+  color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #121212;
+  transition: background-color 0.3s ease;
+}
+
+/* Theme button */
+.theme-toggle-btn {
+  margin-left: 10px;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
